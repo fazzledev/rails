@@ -121,7 +121,7 @@ module ActiveRecord
           end
 
           def build_index(table_name, row, index_sql, columns)
-            /\bON\b\s*"?(\w+?)"?\s*\((?<expressions>.+?)\)(?:\s*WHERE\b\s*(?<where>.+?))?(?:\s*\/\*.*\*\/)?\s*\z/im =~ index_sql
+            /\bON\b\s*"?([^"]+?)"?\s*\((?<expressions>.+?)\)(?:\s*WHERE\b\s*(?<where>.+?))?(?:\s*\/\*.*\*\/)?\s*\z/im =~ index_sql
 
             where = where.sub(/\s*\/\*.*\*\/\z/, "") if where
             orders = {}
