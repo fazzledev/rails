@@ -470,7 +470,7 @@ module ActiveRecord
       alias :add_belongs_to :add_reference
 
       FK_NAME_REGEX = /\ACONSTRAINT\s+"([^"]+)"/
-      FK_REGEX = /.*FOREIGN KEY\s+\("([^"]+)"\)\s+REFERENCES\s+"(\w+)"\s+\("(\w+)"\)/
+      FK_REGEX = /.*FOREIGN KEY\s+\("([^"]+)"\)\s+REFERENCES\s+"([^"]+)"\s+\("(\w+)"\)/
       DEFERRABLE_REGEX = /DEFERRABLE INITIALLY (\w+)/
       def foreign_keys(table_name)
         result = fetch_foreign_keys(Array(table_name).map(&:to_s))
